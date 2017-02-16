@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MyClass : NSObject <NSCopying,NSCoding>
+@interface MyClass : NSObject<NSCopying,NSCoding>
 
 @property (nonatomic,strong) NSArray  *array;
 @property (nonatomic,  copy) NSString *string;

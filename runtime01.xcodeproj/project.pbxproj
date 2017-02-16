@@ -60,8 +60,8 @@
 		AEE740AD1E545A2100A9F1C1 /* runtime01 */ = {
 			isa = PBXGroup;
 			children = (
-				AEE740B51E545AF600A9F1C1 /* MyClass.m */,
 				AEE740B61E545AF600A9F1C1 /* MyClass.h */,
+				AEE740B51E545AF600A9F1C1 /* MyClass.m */,
 				AEE740AE1E545A2100A9F1C1 /* main.m */,
 			);
 			path = runtime01;

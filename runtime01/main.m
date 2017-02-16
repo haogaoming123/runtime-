@@ -79,6 +79,73 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"==============================================");
 
+        //获取指定的成员变量
+        Ivar string = class_getInstanceVariable(cls, "_string");
+        if (string != NULL) {
+            NSLog(@"instace variable %s",ivar_getName(string));
+        }
+        
+        NSLog(@"==============================================");
+        
+        //属性操作
+        objc_property_t *properties = class_copyPropertyList(cls, &outCount);
+        for (int i=0; i<outCount; i++) {
+            objc_property_t property = properties[i];
+            NSLog(@"property's name : %s",property_getName(property));
+        }
+        free(properties);
+        
+        NSLog(@"==============================================");
+        
+        //获取指定的属性
+        objc_property_t array = class_getProperty(cls, "array");
+        if (array != NULL) {
+            NSLog(@"property %s",property_getName(array));
+        }
+        
+        NSLog(@"==============================================");
+        
+        //方法操作
+        Method *methods = class_copyMethodList(cls, &outCount);
+        for (int i=0; i<outCount; i++) {
+            Method method = methods[i];
+            NSLog(@"method's signature : %s",method_getName(method));
+        }
+        free(methods);
+        
+        NSLog(@"==============================================");
+        
+        //获取实例方法
+        Method method1 = class_getInstanceMethod(cls, @selector(method1));
+        if (method1 != NULL) {
+            NSLog(@"method is : %s",method_getName(method1));
+        }
+        
+        NSLog(@"==============================================");
+        
+        //获取类方法
+        Method method2 = class_getClassMethod(cls, @selector(classMethod1));
+        if (method2) {
+            NSLog(@"class method is : %s",method_getName(method2));
+        }
+        
+        NSLog(@"==============================================");
+        
+        //打印方法的具体实现--查看方法的实现
+        IMP imp = class_getMethodImplementation(cls, @selector(method1));
+        imp();
+        
+        NSLog(@"==============================================");
+        
+        //协议
+        Protocol * __unsafe_unretained *protocols = class_copyProtocolList(cls, &outCount);
+        Protocol *protocol;
+        for (int i=0; i<outCount; i++) {
+            protocol = protocols[i];
+            NSLog(@"protocol name is : %s",protocol_getName(protocol));
+        }
+        
+        NSLog(@"==============================================");
     }
     return 0;
 }
