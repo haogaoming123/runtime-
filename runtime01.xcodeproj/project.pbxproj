@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE18CD8E1E56F15300AF0FD6 /* MyClass+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = AE18CD8D1E56F15300AF0FD6 /* MyClass+Tracking.m */; };
+		AE18CD911E56F9AA00AF0FD6 /* funNoSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = AE18CD901E56F9AA00AF0FD6 /* funNoSelector.m */; };
 		AEE740AF1E545A2100A9F1C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE740AE1E545A2100A9F1C1 /* main.m */; };
 		AEE740B71E545AF600A9F1C1 /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE740B51E545AF600A9F1C1 /* MyClass.m */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AE18CD8C1E56F15300AF0FD6 /* MyClass+Tracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MyClass+Tracking.h"; sourceTree = "<group>"; };
+		AE18CD8D1E56F15300AF0FD6 /* MyClass+Tracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MyClass+Tracking.m"; sourceTree = "<group>"; };
+		AE18CD8F1E56F9AA00AF0FD6 /* funNoSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = funNoSelector.h; sourceTree = "<group>"; };
+		AE18CD901E56F9AA00AF0FD6 /* funNoSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = funNoSelector.m; sourceTree = "<group>"; };
 		AEE740AB1E545A2100A9F1C1 /* runtime01 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = runtime01; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEE740AE1E545A2100A9F1C1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AEE740B51E545AF600A9F1C1 /* MyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyClass.m; sourceTree = "<group>"; };
@@ -63,6 +69,10 @@
 				AEE740B61E545AF600A9F1C1 /* MyClass.h */,
 				AEE740B51E545AF600A9F1C1 /* MyClass.m */,
 				AEE740AE1E545A2100A9F1C1 /* main.m */,
+				AE18CD8C1E56F15300AF0FD6 /* MyClass+Tracking.h */,
+				AE18CD8D1E56F15300AF0FD6 /* MyClass+Tracking.m */,
+				AE18CD8F1E56F9AA00AF0FD6 /* funNoSelector.h */,
+				AE18CD901E56F9AA00AF0FD6 /* funNoSelector.m */,
 			);
 			path = runtime01;
 			sourceTree = "<group>";
@@ -125,7 +135,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEE740B71E545AF600A9F1C1 /* MyClass.m in Sources */,
+				AE18CD911E56F9AA00AF0FD6 /* funNoSelector.m in Sources */,
 				AEE740AF1E545A2100A9F1C1 /* main.m in Sources */,
+				AE18CD8E1E56F15300AF0FD6 /* MyClass+Tracking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MyClass.h"
 #import <objc/runtime.h>
+#import "MyClass+Tracking.h"
 
 void TestMetaClass(id self, SEL _cmd) {
     NSLog(@"this object is %p",self);
@@ -42,6 +43,8 @@ int main(int argc, const char * argv[]) {
         NSLog(@"=================== runtime对象实践 ============================");
         // runtime对象实践
         MyClass *myclass = [[MyClass alloc]init];
+        [myclass description];
+        [myclass performSelector:@selector(methodTest)];
         unsigned int outCount = 0;
     
         Class cls = myclass.class;
@@ -160,7 +163,12 @@ int main(int argc, const char * argv[]) {
         //编码类型  name值：C(copy) &(strong) W(weak) 空(assign) 等 value：无
         //非/原子性 name值：空(atomic) N(Nonatomic)  value：无
         //变量名称  name值：V  value：变化
-//        objc_property_attribute_t type =
+        objc_property_attribute_t type = {"T","@\"NSString\""};
+        objc_property_attribute_t ownership = {"C",""};
+        objc_property_attribute_t backingvar = {"N",""};
+        objc_property_attribute_t attrs[] = {type,ownership,backingvar};
+        class_addProperty(clss, "property2", attrs, 3);
+        
         objc_registerClassPair(clss);
         
         id mySubClass = [[clss alloc] init];
@@ -175,6 +183,7 @@ int main(int argc, const char * argv[]) {
         free(mysubClassIvar);
         
         NSLog(@"=========================================");
+        
     }
     return 0;
 }
